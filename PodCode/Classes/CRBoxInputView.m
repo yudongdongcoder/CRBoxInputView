@@ -584,6 +584,13 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
 //        _textView.tintColor = [UIColor clearColor];
 //        _textView.backgroundColor = [UIColor clearColor];
 //        _textView.textColor = [UIColor clearColor];
+        _textView.autocorrectionType = UITextAutocorrectionTypeNo; // 关闭自动更正
+        _textView.autocapitalizationType = UITextAutocapitalizationTypeAllCharacters; // 关闭首字母大写
+        if (@available(iOS 11.0, *)) {
+            _textView.smartQuotesType = UITextSmartQuotesTypeNo;
+            _textView.smartInsertDeleteType = UITextSmartInsertDeleteTypeNo;
+            _textView.smartDashesType = UITextSmartDashesTypeNo;
+        }
         _textView.delegate = self;
         [_textView addTarget:self action:@selector(textDidChange:) forControlEvents:UIControlEventEditingChanged];
     }

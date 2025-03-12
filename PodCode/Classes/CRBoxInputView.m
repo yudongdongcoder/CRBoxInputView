@@ -550,6 +550,7 @@ typedef NS_ENUM(NSInteger, CRBoxTextChangeType) {
         _mainCollectionView.dataSource = self;
         _mainCollectionView.layer.masksToBounds = YES;
         _mainCollectionView.clipsToBounds = YES;
+        _mainCollectionView.semanticContentAttribute = UISemanticContentAttributeForceLeftToRight;
         [_mainCollectionView registerClass:[CRBoxInputCell class] forCellWithReuseIdentifier:CRBoxInputCellID];
     }
     
